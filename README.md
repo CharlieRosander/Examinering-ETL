@@ -5,7 +5,8 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 # 📚 Prerequisites
 
 **NOTE**: I've had some issues with psycopg2 and noticed that you might have to install **psycopg2** outside the venv to get it working
-----------------------------
+
+--------------------------------
         Python 3.6 or higher
         pandas
         requests
@@ -14,7 +15,8 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
             psycopg2-binary
         matplotlib
         python-dotenv
-----------------------------
+--------------------------------
+
     To install the required packages, run:
 
     pip install pandas requests psycopg2 matplotlib python-dotenv
