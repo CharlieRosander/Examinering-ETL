@@ -7,9 +7,9 @@ NOTE: I've had some issues with psycopg2 and noticed that you might have to inst
     Python 3.6 or higher
     pandas
     requests
-    psycopg2
+        psycopg2
         OR
-    psycopg2-binary
+        psycopg2-binary
     matplotlib
     python-dotenv
 
