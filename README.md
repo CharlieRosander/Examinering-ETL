@@ -5,7 +5,7 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 # 📚 Prerequisites
 
 **NOTE**: I've had some issues with psycopg2 and noticed that you might have to install **psycopg2** outside the venv to get it working
-
+----------------------------
         Python 3.6 or higher
         pandas
         requests
@@ -14,7 +14,7 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
             psycopg2-binary
         matplotlib
         python-dotenv
-
+----------------------------
     To install the required packages, run:
 
     pip install pandas requests psycopg2 matplotlib python-dotenv
@@ -38,14 +38,17 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
     The database model used in this program is the default postgresql database
      that is created when you first install postgres,
+
     If you want you can change the db model in the forecast_etl.py on these lines:
 
-    connection = psycopg2.connect(
-            host="localhost",
-            database="postgres",
-            user="postgres",
-            password=db_password,
-            port=5432)
+```py
+        connection = psycopg2.connect(
+                host="localhost",
+                database="postgres",
+                user="postgres",
+                password=db_password,
+                port=5432)
+```
 
 #### Instantiate the ForecastETL class:
     forecast_etl = ForecastETL()
@@ -81,14 +84,13 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
 # 💡 Possible improvements & Thoughts
 ### Make the script more user-friendly:
-
     Right now you have to modify the code to get certain results. 
     For example the city request is explicitly set,
     this was done with a user input before but we could not make it work nicely with Airflow.
 
     Plotting the graph could also be optional, where you get an option to plot it or not.
-### 🔄 Sharing the project
 
+### 🔄 Sharing the project
     As this project uses airflow which does not natively run on windows we had to use WSL,
     which makes the project "hard" to share as the user need to have the same setup to be able to run the DAG.
 
