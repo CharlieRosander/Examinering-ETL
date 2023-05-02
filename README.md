@@ -8,6 +8,8 @@ NOTE: I've had some issues with psycopg2 and noticed that you might have to inst
     pandas
     requests
     psycopg2
+        OR
+    psycopg2-binary
     matplotlib
     python-dotenv
 
