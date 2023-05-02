@@ -49,25 +49,18 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
             port=5432)
 
 #### Instantiate the ForecastETL class:
-
     forecast_etl = ForecastETL()
 #### Extract the forecast data:
-
     forecast_etl.extract_forecast()
 #### Transform the forecast data into two DataFrames (normalized and harmonized):
-
     normalized_dataframe, harmonized_dataframe = forecast_etl.transform_forecast()
 #### Save the forecast data to files:
-
     forecast_etl.save_files()
 #### Initialize the PostgreSQL database and create the required tables:
-
     forecast_etl.init_db()
 #### Load the data into the PostgreSQL database:
-
     forecast_etl.load_db(connection, cursor)
 #### Plot the forecast data:
-
     forecast_etl.plot_forecast()
 # 📁 Output
 
@@ -83,7 +76,8 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 # 💡 Possible improvements & Thoughts
 ### Make the script more user-friendly:
 
-    Right now you have to modify the code to get certain results. For example the city request is explicitly set,
+    Right now you have to modify the code to get certain results. 
+    For example the city request is explicitly set,
     this was done with a user input before but we could not make it work nicely with Airflow.
 
     Plotting the graph could also be optional, where you get an option to plot it or not.
@@ -92,8 +86,10 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     As this project uses airflow which does not natively run on windows we had to use WSL,
     which makes the project "hard" to share as the user need to have the same setup to be able to run the DAG.
 
-    Docker-compose was initially the preferred option but due to hardware-limitations and time-constraints we had to go with WSL.
-    Ideally we would also like to make the project into a docker image, but we did not have time to see if this was a possibility.
+    Docker-compose was initially the preferred option but due to hardware-limitations 
+    and time-constraints we had to go with WSL.
+    Ideally we would also like to make the project into a docker image, 
+    but we did not have time to see if this was a possibility.
 ### 🧩 Modularization:
     Separate the different aspects of the code into modules (e.g., database handling, 
     API requests, data transformation) for better organization and maintainability.
