@@ -6,7 +6,6 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
 **NOTE**: I've had some issues with psycopg2 and noticed that you might have to install **psycopg2** outside the venv to get it working
 
-        ```
         Python 3.6 or higher
         pandas
         requests
@@ -15,7 +14,6 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
             psycopg2-binary
         matplotlib
         python-dotenv
-        ```
 
     To install the required packages, run:
 
@@ -39,7 +37,8 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
     Replace <your_api_key> with the API key you received from OpenWeatherMap.
 
-    The database model used in this program is the default postgresql database that is created when you first install postgres,
+    The database model used in this program is the default postgresql database
+     that is created when you first install postgres,
     If you want you can change the db model in the forecast_etl.py on these lines:
 
     connection = psycopg2.connect(
@@ -52,31 +51,24 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 #### Instantiate the ForecastETL class:
 
     forecast_etl = ForecastETL()
-
 #### Extract the forecast data:
 
     forecast_etl.extract_forecast()
-
 #### Transform the forecast data into two DataFrames (normalized and harmonized):
 
     normalized_dataframe, harmonized_dataframe = forecast_etl.transform_forecast()
-
 #### Save the forecast data to files:
 
     forecast_etl.save_files()
-
 #### Initialize the PostgreSQL database and create the required tables:
 
     forecast_etl.init_db()
-
 #### Load the data into the PostgreSQL database:
 
     forecast_etl.load_db(connection, cursor)
-
 #### Plot the forecast data:
 
     forecast_etl.plot_forecast()
-
 # 📁 Output
 
 #### The script generates the following output files:
@@ -88,7 +80,6 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     A line plot of the forecasted temperatures will be displayed in a separate window.
 
     The program uses PostGreSQL to store the data in tables and dimensional tables.
-
 # 💡 Possible improvements & Thoughts
 ### Make the script more user-friendly:
 
@@ -96,7 +87,6 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     this was done with a user input before but we could not make it work nicely with Airflow.
 
     Plotting the graph could also be optional, where you get an option to plot it or not.
-
 ### 🔄 Sharing the project
 
     As this project uses airflow which does not natively run on windows we had to use WSL,
@@ -104,15 +94,12 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
     Docker-compose was initially the preferred option but due to hardware-limitations and time-constraints we had to go with WSL.
     Ideally we would also like to make the project into a docker image, but we did not have time to see if this was a possibility.
-
 ### 🧩 Modularization:
     Separate the different aspects of the code into modules (e.g., database handling, API requests, data transformation) for better organization and maintainability.
-
 ### 🔧 Configuration:
     Use a configuration file to store settings such as database credentials, API keys, and city queries so that these can be easily updated without modifying the code.
 ### 🌐 Additional data sources:
     Integrate more data sources to enhance the quality and comprehensiveness of the weather forecast.
-
 ### 🧑‍💻 Group-members
 
     Charlie Rosander
