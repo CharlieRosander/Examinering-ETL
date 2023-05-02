@@ -95,9 +95,11 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     Docker-compose was initially the preferred option but due to hardware-limitations and time-constraints we had to go with WSL.
     Ideally we would also like to make the project into a docker image, but we did not have time to see if this was a possibility.
 ### 🧩 Modularization:
-    Separate the different aspects of the code into modules (e.g., database handling, API requests, data transformation) for better organization and maintainability.
+    Separate the different aspects of the code into modules (e.g., database handling, 
+    API requests, data transformation) for better organization and maintainability.
 ### 🔧 Configuration:
-    Use a configuration file to store settings such as database credentials, API keys, and city queries so that these can be easily updated without modifying the code.
+    Use a configuration file to store settings such as database credentials, API keys, 
+    and city queries so that these can be easily updated without modifying the code.
 ### 🌐 Additional data sources:
     Integrate more data sources to enhance the quality and comprehensiveness of the weather forecast.
 ### 🧑‍💻 Group-members
