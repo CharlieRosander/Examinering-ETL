@@ -24,7 +24,6 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     pip install -r requirements.txt
 
 # 🔧 Setup
-
     Set up a PostgreSQL database and provide the password in the .env file:
 
     DB_PASSWORD=<your_postgresql_password>
@@ -50,20 +49,26 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
 #### Instantiate the ForecastETL class:
     forecast_etl = ForecastETL()
+
 #### Extract the forecast data:
     forecast_etl.extract_forecast()
+
 #### Transform the forecast data into two DataFrames (normalized and harmonized):
     normalized_dataframe, harmonized_dataframe = forecast_etl.transform_forecast()
+
 #### Save the forecast data to files:
     forecast_etl.save_files()
+
 #### Initialize the PostgreSQL database and create the required tables:
     forecast_etl.init_db()
+
 #### Load the data into the PostgreSQL database:
     forecast_etl.load_db(connection, cursor)
+
 #### Plot the forecast data:
     forecast_etl.plot_forecast()
-# 📁 Output
 
+# 📁 Output
 #### The script generates the following output files:
 
     Docs/raw_data_json.json: Raw JSON data from the OpenWeatherMap API response
@@ -73,6 +78,7 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
     A line plot of the forecasted temperatures will be displayed in a separate window.
 
     The program uses PostGreSQL to store the data in tables and dimensional tables.
+
 # 💡 Possible improvements & Thoughts
 ### Make the script more user-friendly:
 
@@ -88,16 +94,21 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
     Docker-compose was initially the preferred option but due to hardware-limitations 
     and time-constraints we had to go with WSL.
+
     Ideally we would also like to make the project into a docker image, 
     but we did not have time to see if this was a possibility.
+
 ### 🧩 Modularization:
     Separate the different aspects of the code into modules (e.g., database handling, 
     API requests, data transformation) for better organization and maintainability.
+
 ### 🔧 Configuration:
     Use a configuration file to store settings such as database credentials, API keys, 
     and city queries so that these can be easily updated without modifying the code.
+
 ### 🌐 Additional data sources:
     Integrate more data sources to enhance the quality and comprehensiveness of the weather forecast.
+
 ### 🧑‍💻 Group-members
 
     Charlie Rosander
