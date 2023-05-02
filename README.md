@@ -89,7 +89,7 @@ The script generates the following output files:
 
 A line plot of the forecasted temperatures will be displayed in a separate window.
 
-The program uses PostGresql to store the data in tables and dimensional tables.
+The program uses PostGreSQL to store the data in tables and dimensional tables.
 
 ## Possible improvements & Thoughts
 
