@@ -7,23 +7,23 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 **NOTE**: I've had some issues with psycopg2 and noticed that you might have to install **psycopg2** outside the venv to get it working
 
 --------------------------------
-        Python 3.6 or higher
-        pandas
-        requests
-            psycopg2
-            OR
-            psycopg2-binary
-        matplotlib
-        python-dotenv
+    - Python 3.6 or higher
+    - pandas
+    - requests
+        - psycopg2
+        OR
+        - psycopg2-binary
+    - matplotlib
+    - python-dotenv
 --------------------------------
 
     To install the required packages, run:
 
-    pip install pandas requests psycopg2 matplotlib python-dotenv
+        pip install pandas requests psycopg2 matplotlib python-dotenv
 
     OR if you have the requirements.txt
 
-    pip install -r requirements.txt
+        pip install -r requirements.txt
 
 # 🔧 Setup
     Set up a PostgreSQL database and provide the password in the .env file:
@@ -38,8 +38,10 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
     Replace <your_api_key> with the API key you received from OpenWeatherMap.
 
+    Replace <your_postgresql_password> with the password you set for your PostgreSQL database.
+
     The database model used in this program is the default postgresql database
-     that is created when you first install postgres,
+     that is created when you first install postgres
 
     If you want you can change the db model in the forecast_etl.py on these lines:
 
@@ -51,6 +53,12 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
                 password=db_password,
                 port=5432)
 ```
+
+# 🏃‍♂️ Running the script
+     To run the program, run main.py in your IDE or from the command line:
+
+        python main.py
+
 
 #### Instantiate the ForecastETL class:
     forecast_etl = ForecastETL()
@@ -112,6 +120,9 @@ This is a weather forecast ETL (Extract, Transform, Load) Python script that fet
 
 ### 🌐 Additional data sources:
     Integrate more data sources to enhance the quality and comprehensiveness of the weather forecast.
+
+### 📈 Plotting:
+    The plot can be improved for more readability and better visualization of the data.
 
 ### 🧑‍💻 Group-members
 
